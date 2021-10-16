@@ -1,0 +1,22 @@
+Parser siruri de caractere: un parser de stringuri dupa metoda Boyer-Moore
+Se da un string1 pe baza caruia se creeaza tabelul de parsare si pentru string2
+sa se calculeza decalajul cu aceeasta tabela.
+Pentru abordare am inceput cu citirea si scrierea in fisiere, programul
+principal verifica ca daca n-am parametri fisierele de intrare, zice cum sa-l
+rulez, in caz ca e ok se executa funtia main.
+main -  deschide fiiserul de input si citeste patternul si textul, realizeaza
+        rezolvarea programului si daca exista un rezultat scrie in fiserul de
+        output sau daca nu doar il creeaza si inchide fisierele.
+automat - este rezolvarea efectiva a problemei, calculeaza matricea delta si pe
+          baza ei se primbla prin stari, incepand din 0, iar parcurgand tot
+          textul daca am ajuns in stare finala adaug pozitia de unde incepe
+          patternul in raspunsul final.
+compute_delta - calculeaza delta, creeaza o matrice care reprezinta delta,
+                se adauga cate o linie pe rand iar pentru a popula linia
+                respectiva se calculeaza valoarea(starea) in care se va afla
+                automatul
+index - calculeaza valoarea(starea) urmatoare daca se citeste un caracter,
+        se creeaza ce-am citit + noul caracter si gasesc cea mai mare potrivire
+        cu patternul meu si intoarce dimensiunea respectiva, daca nu gasesc
+        potrivire si e primul caracter atunci e 1, iar default e 0
+
